@@ -1,5 +1,6 @@
 package dropdown;
 
+import Pages.DropDownPage;
 import base.BaseTests;
 import org.testng.annotations.Test;
 
@@ -10,10 +11,10 @@ public class DropdownTests extends BaseTests {
 
     @Test
     public void testSelectOption(){
-        var dropDownPage = homePage.clickDropDown();
+        var DropDownPage = homePage.clickDropDown();
         String option = "Option 1";
-        dropDownPage.selectFromDropDown( "Option 1");
-        var selectedOptions = dropDownPage.getSelectedOption();
+        DropDownPage.selectFromDropDown( "Option 1");
+        var selectedOptions = DropDownPage.getSelectedOptions();
         assertEquals(selectedOptions.size(),1, "Incorrect number of selections");
         assertTrue(selectedOptions.contains(option),"Option not selected");
     }
