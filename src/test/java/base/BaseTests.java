@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import utils.WindowManager;
 
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class BaseTests {
         driver = new ChromeDriver();
         goHome();
         homePage = new HomePage(driver);
+    }
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
     }
 
     @BeforeMethod
